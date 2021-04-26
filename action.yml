@@ -1,0 +1,18 @@
+name: 'openfortivpn'
+description: 'Connect to a SSLVPN using openfortivpn'
+inputs:
+  host:
+    description: 'SSLVPN host'
+    required: true
+  username:
+    description: 'SSLVPN username'
+    required: true
+  password:
+    description: 'SSLVPN password'
+    required: true
+  trustedCert:
+    description: 'SSLVPN trusted cert'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/bundle.js'
