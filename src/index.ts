@@ -1,5 +1,12 @@
 import { getInput, setFailed } from '@actions/core'
-import { spawn } from 'child_process'
+import { spawn, execSync } from 'child_process'
+
+try {
+  execSync('sudo apt-get install openfortivpn')
+} catch (err) {
+  setFailed(err.stderr + '')
+  process.exit(1)
+}
 
 try {
   const username = getInput('username')
